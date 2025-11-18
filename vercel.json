@@ -25,5 +25,4 @@
     }
   ],
   "installCommand": "npm install --prefix event-kampus && npm install --prefix event-kampus-backend"
-  // -------------------------^ SUDAH DIPERBAIKI
 }
