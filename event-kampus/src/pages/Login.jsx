@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = '/api';
 
 function Login({ setIsLoggedIn }) {
   const navigate = useNavigate();
@@ -119,3 +119,4 @@ function Login({ setIsLoggedIn }) {
 }
 
 export default Login;
+
