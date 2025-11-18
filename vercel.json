@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "event-kampus/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "installCommand": "npm install",
+        "buildCommand": "npm run build"
+      }
+    },
+    {
+      "src": "event-kampus-backend/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "event-kampus-backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "event-kampus/$1"
+    }
+  ],
+  "installCommand": "npm install --prefix event_kampus && npm install --prefix event-kampus-backend"
+}
