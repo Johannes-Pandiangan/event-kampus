@@ -1,0 +1,9 @@
+/node_modules
+/event_kampus/node_modules  
+/event-kampus-backend/node_modules 
+/dist                      
+
+/event-kampus-backend/.env  
+
+npm-debug.log
+.DS_Store
