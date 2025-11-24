@@ -35,7 +35,7 @@ const upload = multer({ storage: storage, limits: { fileSize: 5 * 1024 * 1024 } 
 
 
 // --- MIDDLEWARE ---
-app.use(cors()); 
+app.use(cors({ origin: 'https://event-kampus-johannes.vercel.app' }));
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -158,4 +158,5 @@ async function startServer() {
 }
 
 startServer();
+
 
