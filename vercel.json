@@ -20,8 +20,8 @@
       "dest": "event-kampus-backend/server.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "event-kampus/$1"
+      "src": "/(.*)", 
+      "dest": "event-kampus/index.html" 
     }
   ],
   "installCommand": "npm install --prefix event-kampus && npm install --prefix event-kampus-backend"
