@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = '/api'; 
+const BASE_URL = 'https://event-kampus-johannes.vercel.app/api';
 
 function Register() {
   const navigate = useNavigate();
@@ -76,3 +76,4 @@ function Register() {
 
 
 export default Register;
+
