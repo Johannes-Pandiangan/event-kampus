@@ -8,13 +8,13 @@ const EVENTS_TABLE = 'events';
 const USERS_TABLE = 'users';
 
 const pool = new Pool({
-    user: process.env.PG_USER,
-    host: process.env.PG_HOST,
-    port: process.env.PG_PORT,
-    database: process.env.PG_DATABASE,
-    password: process.env.PG_PASSWORD,
-    
-    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false 
+  user: process.env.PGUSER,
+  host: process.env.PGHOST,
+  database: process.env.PGDATABASE,
+  password: process.env.PGPASSWORD,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 // Data event awal
@@ -78,3 +78,4 @@ async function initializeDB() {
 
 // Export Pool untuk menjalankan query di server.js tanpa perlu connect/release manual
 export { pool, initializeDB, EVENTS_TABLE, USERS_TABLE };
+
