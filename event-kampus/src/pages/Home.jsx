@@ -4,7 +4,7 @@ import SeminarIlkom from "../assets/SeminarIlkom.png";
 import Pelatihan from "../assets/Pelatihan.png"; 
 
 // Base URL untuk API backend
-const BASE_URL = 'https://event-kampus-johannes.vercel.app/api/events';
+const BASE_URL = '/api/events';
 
 // Mapping aset lokal untuk event awal yang diinisialisasi
 const IMAGE_MAP = {
@@ -222,4 +222,5 @@ function Home() {
 
 
 export default Home;
+
 
