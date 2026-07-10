@@ -143,21 +143,21 @@ app.delete('/api/events/:id', async (req, res) => {
 // --- SERVER START ---
 async function startServer() {
     try {
-        // Panggil fungsi inisialisasi dan koneksi DB
         await initializeDB(); 
-        app.listen(port, () => {
-            console.log(`Server backend berjalan di http://localhost:${port}`);
-            console.log('Backend siap di-deploy dengan PostgreSQL Pool dan Cloudinary.');
-        });
+        
+        // Hanya jalankan app.listen jika TIDAK berada di environment Vercel
+        if (!process.env.VERCEL) {
+            app.listen(port, () => {
+                console.log(`Server backend berjalan di http://localhost:${port}`);
+                console.log('Backend siap di-deploy dengan PostgreSQL Pool dan Cloudinary.');
+            });
+        }
     } catch (err) {
         console.error('Gagal menjalankan server karena kesalahan database. Pastikan koneksi PostgreSQL benar.');
-        // Beri tahu pengguna cara menggunakan pgAdmin4
         console.log('\nHint: Gunakan pgAdmin4 untuk memastikan tabel "users" dan "events" telah terbuat di database cloud Anda.');
-        process.exit(1);
     }
 }
 
 startServer();
 
-
-
+export default app;
