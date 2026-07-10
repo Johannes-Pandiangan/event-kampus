@@ -3,7 +3,10 @@
   "builds": [
     {
       "src": "event-kampus/package.json",
-      "use": "@vercel/static-build"
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     },
     {
       "src": "event-kampus-backend/server.js",
@@ -17,11 +20,11 @@
     },
     {
       "src": "/(.*\\.[^/]+)$",
-      "dest": "event-kampus/dist/$1"
+      "dest": "event-kampus/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "event-kampus/dist/index.html"
+      "dest": "event-kampus/index.html"
     }
   ]
 }
